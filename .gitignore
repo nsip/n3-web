@@ -1,0 +1,14 @@
+
+server/n3w/contexts/contexts.json
+*.vlog
+*.sst
+server/n3w/contexts/user01/mySchool/crdt/recv/LOCK
+server/n3w/contexts/user01/mySchool/crdt/recv/MANIFEST
+server/n3w/contexts/user01/mySchool/crdt/send/LOCK
+server/n3w/contexts/user01/mySchool/crdt/send/MANIFEST
+server/n3w/contexts/user01/mySchool/d6/LOCK
+server/n3w/contexts/user01/mySchool/d6/MANIFEST
+server/n3w/contexts/user01/mySchool/d6/sbf/featureLinks.sbf
+server/n3w/contexts/user01/mySchool/crdt/config/datatypes.toml
+server/n3w/contexts/user01/mySchool/d6/config/datatypes.toml
+server/n3w/results.json

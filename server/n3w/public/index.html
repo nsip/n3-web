@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/teachers.js"></script>
+    <script type="text/javascript" src="js/teachinggroups.js"></script>
+    <script type="text/javascript" src="js/progress.js"></script>
+    <script type="text/javascript" src="js/syllabus.js"></script>
+    <script type="text/javascript" src="js/n3w.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+        </div>
+        <h3>multi-model traversal</h3>
+        <div class="divider"></div>
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card-panel teal">
+                    <span class="white-text">
+                        Traverse from initial teacher identifier to:
+                        <ul>
+                            <li>Who you are</li>
+                            <li>Who you teach</li>
+                            <li>Work assigned to them</li>
+                            <li>Captured results</li>
+                            <li>Subject-area covered</li>
+                            <li>Syllabus used</li>
+                            <li>Lessons taught</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card-panel blue">
+                    <span class="white-text">
+                        TraversalSpec:
+                        <ul>
+                            <li>(SIF) StaffPersonal</li>
+                            <li>(SIF) TeachingGroup</li>
+                            <li>(SIF) GradingAssignment</li>
+                            <li>(xAPI) xAPI-statements</li>
+                            <li>(json) Subject</li>
+                            <li>(json) Syllabus</li>
+                            <li>(json) Lesson</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        <div class="row">
+            <h5>Query:</h5><p>Antonio Lewis (Teacher) - History 8A (Teachng Group) - Albert Lombardi (Student)</p>
+            <!-- <a class="waves-effect waves-light btn" id="btn-search">search</a> -->
+        </div>
+        <div class="row">
+            <div id="query" class="col s12 m6">
+                <h7>Traversal</h7>
+            </div>
+            <div id="filters" class="col s12 m6">
+                <h7>Filters</h7>
+            </div>
+        </div>
+        <div class="row">
+            <a class="waves-effect waves-light btn" id="btn-search">search</a>
+        </div>
+        <div class="row">
+            <h7>Staff Personal</h7>
+            <div id="staff-personal" class="col s12"></div>
+        </div>
+        <div class="row">
+            <h7>Teaching Group</h7>
+            <div id="teaching-group" class="col s12"></div>
+        </div>
+        <div class="row">
+            <h7>Grading Assignment</h7>
+            <div id="grading-assignment" class="col s12"></div>
+        </div>
+        <div class="row">
+            <h7>xAPI</h7>
+            <div id="xapi-statement" class="col s12"></div>
+        </div>
+        <div class="row">
+            <h7>Subject</h7>
+            <div id="subject" class="col s12"></div>
+        </div>
+        <div class="row">
+            <h7>Syllabus</h7>
+            <div id="syllabus" class="col s12"></div>
+        </div>
+        <div class="row">
+            <h7>Lessons</h7>
+            <div id="lesson" class="col s12"></div>
+        </div>
+    </div>
+    <!-- end of container -->
+    <!--  -->
+    <!--  -->
+    <!-- Modal for extended info display -->
+    <!--  -->
+    <div id="ed-modal" class="modal bottom-sheet">
+        <div class="modal-content" id="extended-data">
+            <h5 id="ed-title">Syllabus Progress</h5>
+            <div id="status-message"></div>
+            <div id="ed-content">
+                <div class="row">
+                    <div class="col s4" id="concepts">Concepts</div>
+                    <div class="col s4" id="skills">Inquiry Skills</div>
+                    <div class="col s4" id="tools">Tools</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer" id="ed-modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+</body>
+
+</html>
