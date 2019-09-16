@@ -7,10 +7,10 @@ time curl -X POST -H "Content-Type: application/json"  \
 -d @sample_data/xapi/xapi.json \
 http://localhost:1323/publish
 
-echo 'publishing school naplan data...'
-time curl -X POST -H "Content-Type: application/json"  \
--d @sample_data/naplan/sif.json \
-http://localhost:1323/publish
+# echo 'publishing school naplan data...'
+# time curl -X POST -H "Content-Type: application/json"  \
+# -d @sample_data/naplan/sif.json \
+# http://localhost:1323/publish
 
 echo 'publishing teaching subject data...'
 time curl -X POST -H "Content-Type: application/json"  \
