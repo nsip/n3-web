@@ -12,3 +12,8 @@ server/n3w/contexts/user01/mySchool/d6/sbf/featureLinks.sbf
 server/n3w/contexts/user01/mySchool/crdt/config/datatypes.toml
 server/n3w/contexts/user01/mySchool/d6/config/datatypes.toml
 server/n3w/results.json
+server/n3w/d6query.txt
+*.TODO
+server/n3w/n3w
+server/n3w/recover_log.json
+server/n3w/token.json
