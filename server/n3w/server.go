@@ -17,8 +17,6 @@ import (
 	n3context "github.com/nsip/n3-context"
 )
 
-var demoUser, demoContext = "user01", "mySchool"
-
 //
 // token secret for demonstration puroses only
 //
@@ -54,9 +52,6 @@ func main() {
 
 	// handler to create a new context for demonstrations only
 	e.POST("/admin/newdemocontext", createContext)
-
-	// demo query
-	e.GET("/staffTraversal", staffTraversal)
 
 	// Start server
 	go func() {
@@ -248,53 +243,4 @@ func graphql(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, results)
-}
-
-//
-// to be replaced
-//
-func staffTraversal(c echo.Context) error {
-	// staffId := c.QueryParam("staffid")
-
-	// // create traversal as json
-	// traversalDef := `{"TraversalSpec":[
-	// 	"StaffPersonal",
-	// 	"TeachingGroup",
-	// 	"GradingAssignment",
-	// 	"Property.Link",
-	// 	"XAPI",
-	// 	"Property.Link",
-	// 	"Subject",
-	// 	"Unique.Link",
-	// 	"Syllabus",
-	// 	"Unique.Link",
-	// 	"Lesson"
-	// ]}`
-	// // fmt.Println("Traversal Spec:\n", traversalDef)
-	// var jsonTraversal deep6.Traversal
-	// if err := json.Unmarshal([]byte(traversalDef), &jsonTraversal); err != nil {
-	// 	panic(err)
-	// }
-	// // create filterspec as json
-	// filterDef := `{
-	// 	"XAPI":[{
-	// 		"Predicate":"actor.name","TargetValue":"Albert Lombardi"
-	// 	}],
-	// 	"TeachingGroup":[{
-	// 		"Predicate":".LocalId","TargetValue":"2018-History-8-1-A"
-	// 	}]
-	// }`
-	// // fmt.Println("Filter Spec:\n", filterDef)
-	// var jsonFilterSpec deep6.FilterSpec
-	// if err := json.Unmarshal([]byte(filterDef), &jsonFilterSpec); err != nil {
-	// 	panic(err)
-	// }
-
-	// results, err := n3c.Query(staffId, jsonTraversal, jsonFilterSpec)
-	// if err != nil {
-	// 	return err
-	// }
-	// return c.JSON(http.StatusOK, results)
-
-	return c.JSON(http.StatusOK, map[string]interface{}{"deprecated": "do not use this method"})
 }
