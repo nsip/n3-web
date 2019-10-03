@@ -92,15 +92,11 @@ function fillQuery() {
 
 function fillFilters() {
     filter = {
-        XAPI: [{
-            Predicate: "actor.name",
-            TargetValue: "Albert Lombardi"
-        }],
-        TeachingGroup: [{
-            Predicate: ".LocalId",
-            TargetValue: "2018-History-8-1-A"
-        }]
-    }    
+        "filters": [
+            { "eq": ["XAPI", "actor.name", "Albert Lombardi"] },
+            { "eq": ["TeachingGroup", ".LocalId", "2018-History-8-1-A"] }
+        ]
+    }
     var str = JSON.stringify(filter, null, 2)
     $("#filters").append("<div class='card-panel grey lighten-4'>" +
         "<h7>Filters</h7><pre>" +
