@@ -1,4 +1,4 @@
-{
+[{
     "learning_area": "hsie",
     "subject": "history",
     "stage": "3",
@@ -19,7 +19,7 @@
             "description": "applies a variety of skills of historical inquiry and communication",
             "id": "HT3-5"
         }],
-        "lifeskills_outcomes":[""],
+        "lifeskills_outcomes": [""],
         "inquiry_questions": [
             "What do we know about the lives of people in Australia's colonial past and how do we know?",
             "How did an Australian colony develop over time and why?",
@@ -107,7 +107,7 @@
         "inquiry_questions": [
             "Why and how did Australia become a nation?",
             "How did Australian society change throughout the twentieth century?",
-            "Who were the people who came to Australia? Why did they come?",            
+            "Who were the people who came to Australia? Why did they come?",
             "What contribution have significant individuals and groups made to the development of Australian society?"
         ],
         "focus": "no specific focus identified",
@@ -133,7 +133,7 @@
                 "ac": ["ACHHK114"],
                 "examples": [
                     "examine Australian human rights, past and present, affecting Aboriginal and/or Torres Strait Islander peoples, migrants, women and children",
-                    "explain how Australian society has changed throughout the twentieth century for these groups",                    
+                    "explain how Australian society has changed throughout the twentieth century for these groups",
                     "investigate the significance of ONE of the following in the struggle for the rights and freedoms of Aboriginal and Torres Strait Islander peoples; the Stolen Generations, the right to vote federally in 1962, the 1967 Referendum, the Mabo decision"
                 ]
             }]
@@ -162,5 +162,110 @@
                 ]
             }]
         }]
+    }],
+    "overview": [
+        "Overview of teaching and learning - Knowledge and understanding, concepts and skills are interrelated and should be taught in an integrated way to provide meaningful learning experiences for students. By engaging in the following content, students will have the opportunity to engage with historical content, concepts and skills.",
+        "The Australian colonies - This topic provides a study of colonial Australia in the 1800s. Students look at the founding of British colonies and the development of a colony. They learn about what life was like for different groups in the colonial period. They examine significant events and people, political and economic developments, social structures and settlement patterns.",
+        "Australia as a nation - This topic moves from colonial Australia to the development of Australia as a nation, particularly after 1901. Students explore the factors that led to Federation and experiences of democracy and citizenship over time. Students understand the significance of Australia's British heritage, the Westminster system and other models that influenced the development of Australia's system of government. Students learn about the way of life of people who migrated to Australia and their contributions to Australia's economic and social development."
+    ],
+    "concepts": [
+    {
+        "name": "Continuity and change",
+        "description": "some things change over time and others remain the same, eg aspects of both continuity and change in Australian society throughout the twentieth century."
+    },
+    {
+        "name": "Cause and effect",
+        "description": "events, decisions or developments in the past that produce later actions, results or effects, eg events and other reasons that led to migration to Australia; reasons for the struggle for rights and freedoms for various groups in Australia"
+    },
+    {
+        "name": "Perspectives",
+        "description": "people from the past will have different views and experiences, eg differing attitudes of various groups to Federation or to granting rights and freedoms to women and Aboriginal peoples."
+    },
+    {
+        "name": "Empathetic understanding",
+        "description": "an understanding of another's point of view, way of life and decisions made in a different time, eg differing attitudes and experiences of living in an Australian colony; understanding the experiences of Aboriginal and Torres Strait Islanders, women and migrants throughout the twentieth century."
+    },
+    {
+        "name": "Significance",
+        "description": "the importance of an event, development or individual/group, eg determining the importance (significance) of various peoples' contributions to the development of a colony."
+    },
+    {
+        "name": "Contestability",
+        "description": "historical events or issues may be interpreted differently by historians, eg British 'invasion' or 'settlement' of Australia."
+    }],
+    "inquiry_skills": [
+    {
+        "name": "Comprehension: chronology, terms and concepts",
+        "skills": [
+        {
+            "skill": "respond, read and write to show understanding of historical matters",
+            "ac": [""]
+        },
+        {
+            "skill": "sequence historical people and events",
+            "ac": ["ACHHS098", "ACHHS117"]
+        },
+        {
+            "skill": "use historical terms and concepts",
+            "ac": ["ACHHS099", "ACHHS118"]
+        }]
+    },
+    {
+        "name": "Analysis and use of sources",
+        "skills": [
+        {
+            "skill": "locate information relevant to inquiry questions in a range of sources",
+            "ac": ["ACHHS102", "ACHHS121"]
+        },
+        {
+            "skill": "compare information from a range of sources",
+            "ac": ["ACHHS103", "ACHHS122"]
+        }]
+    },
+    {
+        "name": "Perspectives and interpretations",
+        "skills": [
+        {
+            "skill": "identify different points of view in the past and present",
+            "ac": ["ACHHS104", "ACHHS123"]
+        }]
+    },
+    {
+        "name": "Empathetic understanding",
+        "skills": [
+        {
+            "skill": "explain why the behaviour and attitudes of people from the past may differ from today",
+            "ac": [""]
+        }]
+    },
+    {
+        "name": "Research",
+        "skills": [
+        {
+            "skill": "identify and pose questions to inform an historical inquiry",
+            "ac": ["ACHHS100", "ACHHS119"]
+        },
+        {
+            "skill": "identify and locate a range of relevant sources to support an historical inquiry",
+            "ac": ["ACHHS101", "ACHHS120"]
+        }]
+    },
+    {
+        "name": "Explanation and communication",
+        "skills": [
+        {
+            "skill": "develop historical texts, particularly narratives and descriptions, which incorporate source material",
+            "ac": ["ACHHS105", "ACHHS124"]
+        },
+        {
+            "skill": "use a range of communication forms (oral, written, graphic) and digital technologies",
+            "ac": ["ACHHS106", "ACHHS125"]
+        }]
+    }],
+    "tools": [
+    {
+        "name": "no specific tools identified",
+        "examples": [""],
+        "code": ""
     }]
-}
+}]

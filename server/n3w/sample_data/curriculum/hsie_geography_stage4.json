@@ -1,6 +1,6 @@
-{
+[{
     "learning_area": "HSIE",
-    "subject": "Geography",
+    "subject": "geography",
     "stage": "4",
     "yrLvls": [7, 8],
     "courses": [
@@ -31,7 +31,7 @@
             "description": "communicates geographical information using a variety of strategies",
             "id": "GE4-8"
         }],
-        "lifeskills_outcomes":[
+        "lifeskills_outcomes": [
             "GELS-1",
             "GELS-2",
             "GELS-4",
@@ -42,7 +42,7 @@
         "inquiry_questions": [
             "Why is there a diversity of landscapes and landforms on Earth? ",
             "What environmental and human processes form and transform landscapes and landforms?",
-            "Why do people value landscapes and landforms?",            
+            "Why do people value landscapes and landforms?",
             "To what extent are landscapes and landforms sustainably managed and protected?"
         ],
         "focus": "Students explore landscapes and landforms using examples from Australia and throughout the world. They explain processes that create landscapes and shape individual landforms and they describe the value of landscapes and landforms to different people. Students examine issues of landscape degradation and ways to manage and protect landscapes and landforms. Students also investigate a natural hazard associated with landscapes and people’s responses to that hazard.",
@@ -52,7 +52,7 @@
             "investigations": [
             {
                 "description": "investigate different landscape and the geomorphic processes that create distinctive landforms",
-                "ac": ["ACHGK048","ACHGK050"],
+                "ac": ["ACHGK048", "ACHGK050"],
                 "examples": [
                     "identification of a variety of landscapes and landforms",
                     "explanation of geomorphic processes that create landforms eg weathering, erosion, deposition, tectonic activity",
@@ -141,14 +141,14 @@
             "description": "communicates geographical information using a variety of strategies",
             "id": "GE4-8"
         }],
-        "lifeskills_outcomes":[
+        "lifeskills_outcomes": [
             "GELS-1",
             "GELS-3",
             "GELS-4",
             "GELS-6",
             "GELS-7",
             "GELS-8"
-        ],        
+        ],
         "inquiry_questions": [
             "Why do people’s perceptions of the liveability of places vary?",
             "What effect does environmental quality and access to services have on people’s wellbeing?",
@@ -162,7 +162,7 @@
             "investigations": [
             {
                 "description": "investigate factors influencing perceptions of the liveability of places",
-                "ac": ["ACHGK043","ACHGK046","ACHGK065"],
+                "ac": ["ACHGK043", "ACHGK046", "ACHGK065"],
                 "examples": [
                     "examination of environmental factors that influence perceptions of liveability eg climate, landforms, natural resources",
                     "discussion of human factors that influence perceptions of liveability eg culture, income, employment, crime and safety",
@@ -250,14 +250,14 @@
             "description": "communicates geographical information using a variety of strategies",
             "id": "GE4-8"
         }],
-        "lifeskills_outcomes":[
+        "lifeskills_outcomes": [
             "GELS-1",
             "GELS-2",
             "GELS-3",
             "GELS-5",
             "GELS-7",
             "GELS-8"
-        ],        
+        ],
         "inquiry_questions": [
             "Why does the spatial distribution of water resources vary globally and within countries?",
             "How do natural and human processes influence the distribution and availability of water as a resource?",
@@ -373,14 +373,14 @@
             "description": "communicates geographical information using a variety of strategies",
             "id": "GE4-8"
         }],
-        "lifeskills_outcomes":[
+        "lifeskills_outcomes": [
             "GELS-2",
             "GELS-3",
             "GELS-4",
             "GELS-5",
             "GELS-7",
             "GELS-8"
-        ],        
+        ],
         "inquiry_questions": [
             "How are people and places connected to other places?",
             "What role does technology play in connecting people to people, goods, services and information in other places?",
@@ -394,7 +394,7 @@
             "investigations": [
             {
                 "description": "investigate the influences on and effects of, people’s travel and recreational, cultural or leisure connections with different places for the future",
-                "ac": ["ACHGK065","ACHGK069"],
+                "ac": ["ACHGK065", "ACHGK069"],
                 "examples": [
                     "analysis of patterns and trends in people’s travel, recreational, cultural and/or leisure activities",
                     "examination of the impact of people’s travel, recreational, cultural and/or leisure activities on the future of places",
@@ -441,5 +441,119 @@
                 ]
             }]
         }]
+    }],
+    "overview": [
+        "In considering the intended learning, teachers will make decisions about the sequence, the emphasis to be given to particular areas of content, and any adjustments required based on the needs, interests and abilities of their students. Content, including knowledge and understanding, concepts, skills and tools, should be integrated to provide meaningful learning experiences for students. All students must undertake fieldwork in Stage 4.",
+        "Where appropriate, students are to be provided with opportunities to investigate a wide range of places and environments from local to global scales."
+    ],
+    "concepts": [
+    {
+        "name": "Place",
+        "description": "the significance of places and what they are like eg factors influencing people’s perceptions of places; the special significance place has to some people; the effect of global trade, transport, information and communication technologies on places across the world."
+    },
+    {
+        "name": "Space",
+        "description": "the significance of location and spatial distribution, and ways people organise and manage spaces that we live in eg spatial distribution of landscapes, global water resources and natural hazards; how location influences the ways people organise places."
+    },
+    {
+        "name": "Environment",
+        "description": "the significance of the environment in human life, and the important interrelationships between humans and the environment eg processes that form and transform landscapes and landforms across the world; the aesthetic, cultural, spiritual and economic value of environments to people; the effect of human activities on natural and human environments."
+    },
+    {
+        "name": "Interconnection",
+        "description": "no object of geographical study can be viewed in isolation eg how people are affected by the environment with regard to landscapes, climate, natural hazards and the liveability of places; how people affect the environment such as people’s use of water on its quality and availability as a resource."
+    },
+    {
+        "name": "Scale",
+        "description": "the way that geographical phenomena and problems can be examined at different spatial levels eg management of geographical challenges across a range of scales from local to global; responses and actions undertaken by governments, organisations and individuals; communities operating at local to global scales."
+    },
+    {
+        "name": "Sustainability",
+        "description": "the capacity of the environment to continue to support our lives and the lives of other living creatures into the future eg pressures on the Earth’s water resources and landscapes; the need to manage environments for a long-term future; sustainable management approaches."
+    },
+    {
+        "name": "Change",
+        "description": "explaining geographical phenomena by investigating how they have developed over time eg changes to resources, landscapes and places over time through natural and human geographical processes and events; the effect of management strategies in reducing the impact of natural and human geographical processes."
+    }],
+    "inquiry_skills": [
+    {
+        "name": "Acquiring geographical information",
+        "skills": [
+        {
+            "skill": "develop geographically significant questions and plan an inquiry, using appropriate geographical methodologies and concepts",
+            "ac": ["ACHGS047", "ACHGS055"]
+        },
+        {
+            "skill": "collect, select and record relevant geographical data and information, using ethical protocols, from appropriate primary data and secondary information sources",
+            "ac": ["ACHGS048", "ACHGS056"]
+        }]
+    },
+    {
+        "name": "Processing geographical information",
+        "skills": [
+        {
+            "skill": "evaluate information sources for their reliability and usefulness",
+            "ac": ["ACHGS049", "ACHGS057"]
+        },
+        {
+            "skill": "represent data in a range of appropriate forms, with and without the use of digital and spatial technologies",
+            "ac": ["ACHGS049", "ACHGS057"]
+        },
+        {
+            "skill": "represent the spatial distribution of different types of geographical phenomena by constructing maps at different scales that conform to cartographic conventions, using spatial technologies as appropriate",
+            "ac": ["ACHGS050", "ACHGS058"]
+        },
+        {
+            "skill": "analyse geographical data and other information using qualitative and quantitative methods, and digital and spatial technologies as appropriate, to identify and propose explanations for spatial distributions, patterns and trends and infer relationships",
+            "ac": ["ACHGS051", "ACHGS059"]
+        },
+        {
+            "skill": "apply geographical concepts to draw conclusions based on the analysis of the data and information collected",
+            "ac": ["ACHGS052", "ACHGS060"]
+        }]
+    },
+    {
+        "name": "Communicating geographical information",
+        "skills": [
+        {
+            "skill": "present findings, arguments and ideas in a range of communication forms selected to suit a particular audience and purpose; using geographical terminology and digital technologies as appropriate",
+            "ac": ["ACHGS053", "ACHGS061"]
+        },
+        {
+            "skill": "reflect on their learning to propose individual and collective action in response to a contemporary geographical challenge, taking account of environmental, economic and social considerations, and predict the expected outcomes of their proposal",
+            "ac": ["ACHGS054", "ACHGS062"]
+        }]
+    }],
+    "tools": [
+    {
+        "name": "Maps",
+        "examples": [
+            "sketch maps, relief maps, political maps, topographic maps, flowline maps, choropleth maps, isoline maps, précis maps, cartograms, synoptic charts",
+            "maps to identify direction, scale and distance, area and grid references, latitude and longitude, altitude, area, contour lines, gradient, local relief"
+        ],
+        "code": "M"
+    },
+    {
+        "name": "Fieldwork",
+        "examples": [
+            "observing, measuring, collecting and recording data, developing and conducting surveys and interviews",
+            "fieldwork instruments such as weather instruments, vegetation identification charts, compasses, GPS, GIS"
+        ],
+        "code": "F"
+    },
+    {
+        "name": "Graphs and statistics",
+        "examples": ["data tables, pie graphs, column graphs, compound column graphs, line graphs, climate graphs, population profiles, multiple tables and graphs presented on a geographical theme, statistics to find patterns and trends"],
+        "code": "GS"
+    },
+    {
+        "name": "Spatial technologies",
+        "examples": ["virtual maps, satellite images, global positioning systems (GPS), geographic information systems (GIS)"],
+        "code": "ST"
+    },
+    {
+        "name": "Visual representations",
+        "examples": ["photographs, aerial photographs, illustrations, flow charts, annotated diagrams, multimedia, field sketches, cartoons, web tools"],
+        "code": "VR"
     }]
-}
+}]

@@ -28,7 +28,6 @@ function fillTeacherSelector() {
     }).done(function(result) {
         // fill the teachers dropdown
         $.each(result.data.q.StaffPersonal, function() {
-            // console.log(this);
             $dropdown.prepend($("<option />").val(this.RefId).text(this.PersonInfo.Name.GivenName +
                 " " + this.PersonInfo.Name.FamilyName));
         });

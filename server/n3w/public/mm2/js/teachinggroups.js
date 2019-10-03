@@ -30,9 +30,7 @@ function fillTeachingGroupSelector(teacher_guid) {
         })
     }).done(function(result) {
         // fill teaching group selector
-        // console.log(result);
         $.each(result.data.q.TeachingGroup, function() {
-            // console.log(this);
             // get the teaching periods
             var periodDescriptor = ""
             $.each(this.TeachingGroupPeriodList.TeachingGroupPeriod, function() {
