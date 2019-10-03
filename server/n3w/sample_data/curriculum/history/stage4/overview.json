@@ -1,4 +1,4 @@
- [{
+{
     "learning_area": "hsie",
     "subject": "history",
     "stage": "4",
@@ -115,4 +115,4 @@
         "examples": [""],
         "code": ""
     }]
-}]
+}
