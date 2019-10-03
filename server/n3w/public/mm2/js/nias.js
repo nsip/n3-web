@@ -14,7 +14,6 @@ $(document).ready(function() {
     // 
     $("#teacher-select").on("change", function(event) {
         $selection = $("#teacher-select").val()
-        // console.log($selection);
         fillTeachingGroupSelector($selection);
         // remove any existing data
         var $progress = $("#progress-table").empty();
@@ -27,7 +26,6 @@ $(document).ready(function() {
     // 
     $("#teaching-group-select").on("change", function(event) {
         $selection = $("#teaching-group-select").val()
-        // console.log($selection);
         fillProgressTable($selection);
     });
 

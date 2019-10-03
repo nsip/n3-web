@@ -29,13 +29,53 @@ http://localhost:1323/n3/publish
 echo 'publishing curriculum data...'
 time curl -X POST -H "Content-Type: application/json"  \
 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_history_stage1.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_history_stage2.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_history_stage3.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
 -d @sample_data/curriculum/hsie_history_stage4.json \
 http://localhost:1323/n3/publish
 
-# time curl -X POST -H "Content-Type: application/json"  \
-# -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
-# -d @sample_data/curriculum/content.json \
-# http://localhost:1323/n3/publish
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_history_stage5.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_geography_stage1.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_geography_stage2.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_geography_stage3.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_geography_stage4.json \
+http://localhost:1323/n3/publish
+
+time curl -X POST -H "Content-Type: application/json"  \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbDIiLCJ1bmFtZSI6Im1hdHRmIn0.TY_C1zAFolhAhyv-uzxjiUw0eb5Wq32rqfdmxXuO7bM" \
+-d @sample_data/curriculum/hsie_geography_stage5.json \
+http://localhost:1323/n3/publish
 
 echo 'publishing school sif data...'
 time curl -X POST -H "Content-Type: application/json"  \
