@@ -60,8 +60,13 @@ func main() {
 		e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 			AllowOrigins: []string{"*"},
 			AllowMethods: []string{http.MethodGet, http.MethodHead, http.MethodPut, http.MethodPatch, http.MethodPost, http.MethodDelete},
-			AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+			AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
 		})) // allow cors requests during testing
+
+		// // use for debugging only
+		// e.Use(middleware.BodyDump(func(c echo.Context, reqBody, resBody []byte) {
+		// 	log.Println("reqBody:\n", string(reqBody))
+		// }))
 
 		// entry point for javascript/css/html resources etc.
 		e.Static("/", "public")
@@ -70,6 +75,7 @@ func main() {
 		// requirement for jwt
 		r := e.Group("/n3")
 		r.Use(middleware.JWT(demoSecret))
+
 		r.POST("/graphql", graphql)
 		r.POST("/publish", publish)
 
@@ -234,6 +240,8 @@ func graphql(c echo.Context) error {
 	if err := c.Bind(grq); err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, "Unable to parse graphql query / params")
 	}
+
+	// log.Printf("\n\nquery:\n\n$%#v\n\n%#v\n", grq.Query, grq.Variables)
 
 	// handle the query
 	results, err := n3ctx.GQLQuery(grq.Query, grq.Variables)
