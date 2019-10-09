@@ -55,3 +55,4 @@ server/n3w/contexts/n3Demo/mySchool/d6/LOCK
 server/n3w/contexts/n3Demo/mySchool/d6/MANIFEST
 server/n3w/contexts/n3Demo/mySchool/gql/schema.json
 server/n3w/sequence.json
+server/n3w/.env

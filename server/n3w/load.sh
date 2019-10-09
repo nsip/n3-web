@@ -2,6 +2,11 @@
 
 # shell script to load set of linked / useful demo data files
 
+echo 'generating demo environment token'
+curl -s -X POST -d 'userName=n3Demo' -d 'contextName=mySchool' \
+localhost:1323/admin/newdemocontext > token.json
+
+
 echo 'publishing school xapi data...'
 time curl -X POST -H "Content-Type: application/json"  \
 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbCIsInVuYW1lIjoibjNEZW1vIn0.VTD8C6pwbkQ32u-vvuHnxq3xijdwNTd54JAyt1iLF3I" \
