@@ -20,7 +20,6 @@ function fillProgressTable(tgroup_id) {
         data: JSON.stringify({
             query: progressQuery,
             variables:
-
             {
                 qspec: {
                     queryType: "traversalWithId",
@@ -40,7 +39,9 @@ function fillProgressTable(tgroup_id) {
                         "Unique.Link",
                         "Syllabus",
                         "Unique.Link",
-                        "Lesson"
+                        "Lesson",
+                        "Unique.Link",
+                        "LessonSequence"
                     ],
                     filters: [
                         { eq: ["TeachingGroup", ".RefId", tgroup_id] }
@@ -51,9 +52,6 @@ function fillProgressTable(tgroup_id) {
     }).done(function(result) {
 
         $n3data = result.data.q
-
-        // console.log($n3data);
-
 
         // restructure data for display...
         $n3data.assignmentResults = extractAssignmentResults($n3data);
@@ -288,6 +286,25 @@ query fullTraversal($qspec: QueryInput!) {
       ShortName
       RefId
       LocalId
+    }
+    LessonSequence{
+      thestage
+      thesubject
+      userId
+      lessonId
+      lessonList{
+       editcontent
+        end{
+          dateTime
+        }
+        start{
+          dateTime
+        }
+        summary
+      }
+      thearea
+      thecourse
+      thedescription
     }
     XAPI {
       id
