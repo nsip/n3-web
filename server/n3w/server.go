@@ -11,6 +11,7 @@ import (
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	elog "github.com/labstack/gommon/log"
@@ -32,8 +33,49 @@ type GQLRequest struct {
 	Variables map[string]interface{} `json:"variables"`
 }
 
-func main() {
+func init() {
+	if err := godotenv.Load(); err != nil {
+		log.Print("No .env file found")
+	}
+}
 
+func getEnv(key string, defaultVal string) string {
+	if value, exists := os.LookupEnv(key); exists {
+		return value
+	}
+	return defaultVal
+}
+
+func makeStatic(keyPart string, portDefault string, pathDefault string) func() {
+	return func() {
+		le := echo.New()
+
+		le.Use(middleware.Gzip())
+		le.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+			AllowOrigins: []string{"*"},
+			AllowMethods: []string{http.MethodGet, http.MethodHead, http.MethodPut, http.MethodPatch, http.MethodPost, http.MethodDelete},
+			AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
+		})) // allow cors requests during testing
+
+		port := getEnv(keyPart + "_PORT", portDefault)
+		path := getEnv(keyPart + "_PATH", pathDefault)
+
+		// le.Use(middleware.Logger())
+		// le.Use(middleware.Recover())
+
+		le.Use(middleware.StaticWithConfig(middleware.StaticConfig{
+			Index:   "index.html",
+			Root: path,
+			Browse: true,
+			HTML5: true,
+		}))
+		if err := le.Start(":" + port); err != nil {
+			le.Logger.Info("shutting down the server: " + path)
+		}
+	}
+}
+
+func main() {
 	//
 	// restore context manager from previous runs
 	//
@@ -79,11 +121,15 @@ func main() {
 		r.POST("/graphql", graphql)
 		r.POST("/publish", publish)
 
+		// 1323 - Main server
 		if err := e.Start(":1323"); err != nil {
 			e.Logger.Info("shutting down the server")
 		}
-
 	}()
+
+	// 8002 - dc-ui
+	go makeStatic("N3_DCUI", "8002", "public/dc-ui")()
+	go makeStatic("N3_DCDYNAMIC", "8003", "public/dc-dynamic")()
 
 	// Wait for interrupt signal to gracefully shutdown the server with
 	// a timeout of 10 seconds.
