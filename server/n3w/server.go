@@ -1,4 +1,13 @@
 // server.go
+//
+// NOTE: On External Static Servers
+//	DC-UI and dc-dynamic are hosted here on port 8002 and 8003 respectively.
+//	n3/build brings these into public/dc-ui and public/dc-dynamic.
+//	You can override the default location with ENVIRONENT varilables or .env file
+//		N3_DCUI_PATH, N3_DCUI_PORT, N3_DCDYNAMIC_PATH, N3_DCDYNAMIC_PORT
+//		e.g.
+//			export N3_DCUI_PATH=~/nsip/DC-UI/dist/spa-mat/
+//			export N3_DCDYNAMIC_PATH=~/nsip/dc-dynamic/dist/spa-mat/
 
 package main
 
@@ -57,17 +66,17 @@ func makeStatic(keyPart string, portDefault string, pathDefault string) func() {
 			AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
 		})) // allow cors requests during testing
 
-		port := getEnv(keyPart + "_PORT", portDefault)
-		path := getEnv(keyPart + "_PATH", pathDefault)
+		port := getEnv(keyPart+"_PORT", portDefault)
+		path := getEnv(keyPart+"_PATH", pathDefault)
 
 		// le.Use(middleware.Logger())
 		// le.Use(middleware.Recover())
 
 		le.Use(middleware.StaticWithConfig(middleware.StaticConfig{
-			Index:   "index.html",
-			Root: path,
+			Index:  "index.html",
+			Root:   path,
 			Browse: true,
-			HTML5: true,
+			HTML5:  true,
 		}))
 		if err := le.Start(":" + port); err != nil {
 			le.Logger.Info("shutting down the server: " + path)
