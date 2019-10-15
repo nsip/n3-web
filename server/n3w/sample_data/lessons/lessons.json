@@ -6,12 +6,12 @@
             "lesson_id": "geography001",
             "learning_area": "hsie",
             "subject": "geography",
+            "teacher": "lzrlb501",
             "stage": "4",
             "title": "Lesson 1 Sequence 1",
             "content": "This is my awsome lesson content for geography"
         }
     },
-
     {
         "Lesson":
         {
@@ -24,7 +24,6 @@
             "content": "Lesson content for Investigating History..."
         }
     },
-
     {
         "Lesson":
         {
@@ -37,5 +36,4 @@
             "content": "Lesson content for Historical Sources..."
         }
     }
-
 ]

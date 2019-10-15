@@ -3,7 +3,7 @@
 // 
 // fill syllabus view
 // 
-function fillSyllabusView(teacher_guid) {
+function fillSyllabusView() {
 
     var $concepts = $("#concepts");
     $($concepts).empty();

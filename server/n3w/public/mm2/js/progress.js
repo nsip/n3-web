@@ -2,7 +2,6 @@
 
 
 var $selectedTeacher = "";
-var $n3data = {};
 
 // 
 // fill the progress data table
@@ -52,6 +51,8 @@ function fillProgressTable(tgroup_id) {
     }).done(function(result) {
 
         $n3data = result.data.q
+
+        console.log("lesson-sequnces:", $n3data.LessonSequence)
 
         // restructure data for display...
         $n3data.assignmentResults = extractAssignmentResults($n3data);

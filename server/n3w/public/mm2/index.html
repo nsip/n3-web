@@ -15,6 +15,7 @@
     <script type="text/javascript" src="mm2/js/teachinggroups.js"></script>
     <script type="text/javascript" src="mm2/js/progress.js"></script>
     <script type="text/javascript" src="mm2/js/syllabus.js"></script>
+    <script type="text/javascript" src="mm2/js/coverage.js"></script>
     <script type="text/javascript" src="mm2/js/nias.js"></script>
 </head>
 
@@ -35,9 +36,8 @@
         </div>
         <!-- <div class="divider"></div> -->
         <div class="row">
-          <div id="progress-table" class="col s12"></div>
-          <!-- <h5 id="tg-name"></h5> -->
-
+            <div id="progress-table" class="col s12"></div>
+            <!-- <h5 id="tg-name"></h5> -->
         </div>
     </div>
     <!-- end of container -->
@@ -47,21 +47,44 @@
     <!--  -->
     <div id="ed-modal" class="modal bottom-sheet">
         <div class="modal-content" id="extended-data">
-            <h5 id="ed-title">Syllabus Progress</h5>
-            <div id="status-message"></div>
-            <div id="ed-content">
-              <div class="row">
-                <div class="col s4" id="concepts">Concepts</div>
-                <div class="col s4" id="skills">Inquiry Skills</div>
-                <div class="col s4" id="tools">Tools</div>
-              </div>
+            <!--  tab header -->
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s6"><a class="active" href="#progress">Syllabus Progress</a></li>
+                        <li class="tab col s6"><a href="#coverage">Syllabus Coverage</a></li>
+                    </ul>
+                </div>
+                <!-- pro -->
+                <div id="progress" class="col s12">
+                    <!-- <h5 id="ed-title">Syllabus Progress</h5> -->
+                    <div id="status-message"></div>
+                    <div id="ed-content">
+                        <div class="row">
+                            <div class="col s4" id="concepts">Concepts</div>
+                            <div class="col s4" id="skills">Inquiry Skills</div>
+                            <div class="col s4" id="tools">Tools</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="coverage" class="col s12">
+                <!-- <h5 id="ed-title">Syllabus Progress</h5> -->
+                <div id="coverage-status-message"></div>
+                <div id="ed-content">
+                    <div class="row">
+                        <!-- <div class="col s12">Courses Taught</div> -->
+                        <div class="col s12" id="sequences"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+            <!--  -->
+            <div class="modal-footer" id="ed-modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
             </div>
         </div>
-        <div class="modal-footer" id="ed-modal-footer">
-            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
     </div>
-
 </body>
 
 </html>
