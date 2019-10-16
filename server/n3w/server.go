@@ -266,13 +266,17 @@ func publish(c echo.Context) error {
 	n3ctx, httpErr := getContextFromToken(c)
 	if httpErr != nil {
 		log.Println("error fetching context publish(): ", httpErr)
+		panic("Failed")
 		return httpErr
 	}
 
 	// send in the data, via the crdt layer
 	err := n3ctx.PublishFromHTTPRequest(c.Request())
 	if err != nil {
-		return echo.NewHTTPError(http.StatusInternalServerError, "Failed to publish data to context", err)
+		// XXX SCOTT
+		panic(err);
+		// return echo.NewHTTPError(http.StatusInternalServerError, "Failed to publish data to context", err)
+		// fmt.Println(err.(*errors.Error).ErrorStack())
 	}
 
 	return c.JSON(http.StatusOK, "data published ok")
