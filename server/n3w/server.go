@@ -120,7 +120,12 @@ func main() {
 		// }))
 
 		// entry point for javascript/css/html resources etc.
-		e.Static("/", "public")
+		e.Use(middleware.StaticWithConfig(middleware.StaticConfig{
+			Index:  "index.html",
+			Root:   "public",
+			Browse: true,
+			HTML5:  true,
+		}))
 
 		// protect n3 endpoints /publish /graphql with
 		// requirement for jwt
