@@ -8,12 +8,62 @@ import (
 	"net/http"
 	"os"
   "io/ioutil"
+  "strings"
 )
 
 func main() {
-
-	token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbCIsInVuYW1lIjoibjNEZW1vIn0"
+  // Hard coded token for now to deal with special sample data
+  token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbCIsInVuYW1lIjoibjNEZW1vIn0.VTD8C6pwbkQ32u-vvuHnxq3xijdwNTd54JAyt1iLF3I"
   fmt.Printf("Expected token: %s\n", token)
+
+  // Test the user exists
+	f, err := os.Open("sample_data/test_user.json")
+	if err != nil {
+		// handle err
+	}
+	defer f.Close()
+	req, err := http.NewRequest("POST", "http://localhost:1323/n3/graphql", f)
+	if err != nil {
+		// handle err
+	}
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Authorization", "Bearer " + token)
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		// handle err
+	}
+	defer resp.Body.Close()
+
+  b, err := ioutil.ReadAll(resp.Body)
+  if err != nil {
+      // handle err
+  }
+  // TODO - check return code = 500 or better error parsing, or json
+  if strings.Contains(string(b), "Failed to retrieve context") {
+    fmt.Printf("User does not exist, creating\n")
+    body := strings.NewReader(`userName=n3Demo&contextName=mySchool`)
+    req, err := http.NewRequest("POST", "http://localhost:1323/admin/newdemocontext", body)
+    if err != nil {
+    	// handle err
+    }
+    req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+    resp, err := http.DefaultClient.Do(req)
+    if err != nil {
+    	// handle err
+    }
+    defer resp.Body.Close()
+    b, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        // handle err
+    }
+
+    fmt.Printf("User Created Success: %s\n", b)
+  } else {
+    fmt.Printf("User already exists\n")
+  }
+
 	// POST to X with token
 	//  If not auth
 	// curl -s -X POST -d 'userName=n3Demo' -d 'contextName=mySchool' \ localhost:1323/admin/newdemocontext > token.json
@@ -56,7 +106,7 @@ func main() {
     		// handle err
     	}
     	req.Header.Set("Content-Type", "application/json")
-    	req.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJkZW1vIiwiY25hbWUiOiJteVNjaG9vbCIsInVuYW1lIjoibjNEZW1vIn0.VTD8C6pwbkQ32u-vvuHnxq3xijdwNTd54JAyt1iLF3I")
+    	req.Header.Set("Authorization", "Bearer " + token)
 
     	resp, err := http.DefaultClient.Do(req)
     	if err != nil {
