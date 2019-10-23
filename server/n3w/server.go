@@ -279,7 +279,7 @@ func publish(c echo.Context) error {
 	err := n3ctx.PublishFromHTTPRequest(c.Request())
 	if err != nil {
 		// XXX SCOTT
-		panic(err);
+		panic(err)
 		// return echo.NewHTTPError(http.StatusInternalServerError, "Failed to publish data to context", err)
 		// fmt.Println(err.(*errors.Error).ErrorStack())
 	}

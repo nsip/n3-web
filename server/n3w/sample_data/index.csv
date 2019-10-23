@@ -1,0 +1,14 @@
+post_token,http://localhost:1323/n3/publish,sample_data/xapi/xapi_en.json
+post_token,http://localhost:1323/n3/publish,sample_data/subjects/subjects.json
+post_token,http://localhost:1323/n3/publish,sample_data/lessons/lessons.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_history_stage1.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_history_stage2.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_history_stage3.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_history_stage4.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_history_stage5.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_geography_stage1.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_geography_stage2.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_geography_stage3.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_geography_stage4.json
+post_token,http://localhost:1323/n3/publish,sample_data/curriculum/hsie_geography_stage5.json
+post_token,http://localhost:1323/n3/publish,sample_data/sif/sif.json
