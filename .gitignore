@@ -1,4 +1,5 @@
 *.exe
+server/n3w/server
 server/n3w/load
 server/n3w/contexts/contexts.json
 *.vlog
