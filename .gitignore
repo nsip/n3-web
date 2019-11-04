@@ -58,3 +58,4 @@ server/n3w/contexts/n3Demo/mySchool/d6/MANIFEST
 server/n3w/contexts/n3Demo/mySchool/gql/schema.json
 server/n3w/sequence.json
 server/n3w/.env
+server/n3w/tools/load
