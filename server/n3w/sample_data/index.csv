@@ -1,3 +1,4 @@
+post_token,http://localhost:1323/n3/publish,sample_data/naplan/sif.json
 post_token,http://localhost:1323/n3/publish,sample_data/xapi/xapi_en.json
 post_token,http://localhost:1323/n3/publish,sample_data/subjects/subjects.json
 post_token,http://localhost:1323/n3/publish,sample_data/lessons/lessons.json

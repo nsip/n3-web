@@ -28,6 +28,7 @@ function fillProgressTable(tgroup_id) {
                         "TeachingGroup",
                         "StudentPersonal",
                         "StudentAttendanceTimeList",
+                        "StudentPersonal",
                         "TeachingGroup",
                         "GradingAssignment",
                         "XAPI",
@@ -48,7 +49,7 @@ function fillProgressTable(tgroup_id) {
     }).done(function(result) {
 
         $n3data = result.data.q
-        // console.log($n3data)
+        // console.log($n3data);
         // console.log("lesson-sequences:", $n3data.LessonSequence)
 
         // restructure data for display...
