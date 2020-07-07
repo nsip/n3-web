@@ -137,7 +137,7 @@ func main() {
 
 		// 1323 - Main server
 		if err := e.Start(":1323"); err != nil {
-			e.Logger.Info("shutting down the server")
+			e.Logger.Info("shutting down the server:", err)
 		}
 	}()
 
@@ -271,7 +271,7 @@ func publish(c echo.Context) error {
 	n3ctx, httpErr := getContextFromToken(c)
 	if httpErr != nil {
 		log.Println("error fetching context publish(): ", httpErr)
-		panic("Failed")
+		// panic("Failed")
 		return httpErr
 	}
 
@@ -279,8 +279,8 @@ func publish(c echo.Context) error {
 	err := n3ctx.PublishFromHTTPRequest(c.Request())
 	if err != nil {
 		// XXX SCOTT
-		panic(err)
-		// return echo.NewHTTPError(http.StatusInternalServerError, "Failed to publish data to context", err)
+		// panic(err)
+		return echo.NewHTTPError(http.StatusInternalServerError, "Failed to publish data to context", err)
 		// fmt.Println(err.(*errors.Error).ErrorStack())
 	}
 
