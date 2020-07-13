@@ -7,5 +7,5 @@ require (
 	github.com/joho/godotenv v1.3.0
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/gommon v0.3.0
-	github.com/nsip/n3-context v0.1.0
+	github.com/nsip/n3-context v0.1.1
 )
