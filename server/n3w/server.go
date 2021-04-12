@@ -17,12 +17,13 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"syscall"
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/joho/godotenv"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	elog "github.com/labstack/gommon/log"
 	n3context "github.com/nsip/n3-context"
 )
@@ -147,8 +148,8 @@ func main() {
 
 	// Wait for interrupt signal to gracefully shutdown the server with
 	// a timeout of 10 seconds.
-	quit := make(chan os.Signal)
-	signal.Notify(quit, os.Interrupt)
+	quit := make(chan os.Signal, 1)
+	signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
 	<-quit
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -194,7 +195,7 @@ func createContext(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "Failed to create context", err)
 	}
 	// attach the context to the streaming server
-	// to recieve updates
+	// to receive updates
 	err = n3ctx.Activate()
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "Failed to activate context", err)
@@ -218,7 +219,7 @@ func createContext(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, map[string]string{
 		"token":   t,
-		"message": "Context created and activated successfully. Use this token to publish: /n3/publish and query: /n3/graphql data. Token must be provided in Autorization: Bearer header.",
+		"message": "Context created and activated successfully. Use this token to publish: /n3/publish and query: /n3/graphql data. Token must be provided in Authorization: Bearer header.",
 	})
 
 }
