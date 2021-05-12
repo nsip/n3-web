@@ -16,14 +16,16 @@ func main() {
 	fmt.Printf("Expected token: %s\n", token)
 
 	// Test the user exists
-	f, err := os.Open("sample_data/test_user.json")
+	f, err := os.Open("../sample_data/test_user.json")
 	if err != nil {
 		// handle err
+		panic(err.Error())
 	}
 	defer f.Close()
 	req, err := http.NewRequest("POST", "http://localhost:1323/n3/graphql", f)
 	if err != nil {
 		// handle err
+		panic(err.Error())
 	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+token)
@@ -31,12 +33,14 @@ func main() {
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		// handle err
+		panic(err.Error())
 	}
 	defer resp.Body.Close()
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		// handle err
+		panic(err.Error())
 	}
 	// TODO - check return code = 500 or better error parsing, or json
 	if strings.Contains(string(b), "Failed to retrieve context") {
@@ -45,17 +49,20 @@ func main() {
 		req, err := http.NewRequest("POST", "http://localhost:1323/admin/newdemocontext", body)
 		if err != nil {
 			// handle err
+			panic(err.Error())
 		}
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
 		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
 			// handle err
+			panic(err.Error())
 		}
 		defer resp.Body.Close()
 		b, err := io.ReadAll(resp.Body)
 		if err != nil {
 			// handle err
+			panic(err.Error())
 		}
 
 		fmt.Printf("User Created Success: %s\n", b)
@@ -73,7 +80,7 @@ func main() {
 	//  post_token,URL,filename
 
 	// Open the file
-	csvfile, err := os.Open("sample_data/index.csv")
+	csvfile, err := os.Open("../sample_data/index.csv")
 	if err != nil {
 		log.Fatalln("Couldn't open the csv file", err)
 	}
@@ -98,11 +105,13 @@ func main() {
 			f, err := os.Open(record[2])
 			if err != nil {
 				// handle err
+				panic(err.Error())
 			}
 			defer f.Close()
 			req, err := http.NewRequest("POST", record[1], f)
 			if err != nil {
 				// handle err
+				panic(err.Error())
 			}
 			req.Header.Set("Content-Type", "application/json")
 			req.Header.Set("Authorization", "Bearer "+token)
@@ -110,12 +119,14 @@ func main() {
 			resp, err := http.DefaultClient.Do(req)
 			if err != nil {
 				// handle err
+				panic(err.Error())
 			}
 			defer resp.Body.Close()
 
 			b, err := io.ReadAll(resp.Body)
 			if err != nil {
 				// handle err
+				panic(err.Error())
 			}
 
 			fmt.Printf("Success: %s\n", b)
