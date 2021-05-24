@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -r ./contexts
+rm -rf ./contexts
 

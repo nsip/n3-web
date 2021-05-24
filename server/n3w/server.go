@@ -13,6 +13,8 @@ package main
 
 import (
 	"context"
+	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -21,6 +23,7 @@ import (
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
+	"github.com/digisan/gotk"
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -105,6 +108,12 @@ func main() {
 	// handler to create a new context for demonstrations only
 	e.POST("/admin/newdemocontext", createContext)
 
+	// handler to create a temporary object model config for demonstrations only
+	e.POST("/admin/addtmpobjconf", addTmpObjConf)
+
+	// handler to clear all temporary object model configs for demonstrations only
+	e.POST("/admin/clrtmpobjconf", clrTmpObjConf)
+
 	// Start server
 	go func() {
 		e.Use(middleware.Gzip())
@@ -169,6 +178,37 @@ func main() {
 	}
 	log.Println("...ContextManager closed")
 
+}
+
+//
+// handler allows user to add a temporary object model classifier config
+// which will be appended to n3-crdt default classifier config.
+// temporary config is inferred from csv file via request body.
+//
+func addTmpObjConf(c echo.Context) error {
+	bytes, err := io.ReadAll(c.Request().Body)
+	if err == nil {
+		if csvstr := string(bytes); gotk.IsCSV(csvstr) {
+			model := c.QueryParam("modelName")
+			if model == "" {
+				model = fmt.Sprintf("tempmodel%v", time.Now().Unix())
+			}
+			if tc, err := n3context.AddTempContextConfigFromCSV(model, csvstr); err == nil {
+				return c.String(http.StatusOK, tc)
+			}
+			return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+		}
+		return echo.NewHTTPError(http.StatusBadRequest, "valid csv file is needed in request body")
+	}
+	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+}
+
+//
+// handler allows user to clear all temporary object model classifier config
+//
+func clrTmpObjConf(c echo.Context) error {
+	n3context.ClearTempContextConfig()
+	return c.String(http.StatusOK, "Cleared")
 }
 
 //
